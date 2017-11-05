@@ -1,0 +1,35 @@
+extends layout
+
+block content
+	form#formSearch(name="search",action="/",method="get")
+		input#inputUserName(type="text", placeholder="Search Team",name="search")
+	h1.
+		IPL Match Details:
+	table
+		tr
+			th Season
+			th Match between
+			th Winner of the match
+			th Win by Runs / Wickets
+			th Man of the Match
+			th Venue
+		tbody
+		each match,i in matchlist
+			tr
+				td #{match.season}
+				td 
+					<a target="_blank" href="http://localhost:3000/match/#{match.id}">#{match.team1} Vs #{match.team2}
+				td #{match.winner}
+				td #{match.win_by_runs} / #{match.win_by_wickets}
+				td #{match.player_of_match}
+				td #{match.venue},#{match.city}
+	div.inline
+		<a href="http://localhost:3000/seasons/2008">Season 1</a>
+		<a href="http://localhost:3000/seasons/2009">Season 2</a>
+		<a href="http://localhost:3000/seasons/2010">Season 3</a>
+		<a href="http://localhost:3000/seasons/2011">Season 4</a>
+		<a href="http://localhost:3000/seasons/2012">Season 5</a>
+		<a href="http://localhost:3000/seasons/2013">Season 6</a>
+		<a href="http://localhost:3000/seasons/2014">Season 7</a>
+		<a href="http://localhost:3000/seasons/2015">Season 8</a>
+		<a href="http://localhost:3000/seasons/2016">Season 9</a>

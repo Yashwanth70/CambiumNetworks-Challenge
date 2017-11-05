@@ -1,0 +1,30 @@
+extends layout
+
+block content
+	p Details of #{match.team1} Vs #{match.team1} :
+	table
+		tr
+			th Season
+			th Match between
+			th Toss Won By
+			th Toss Decision
+			th Result
+			th Winner of the match
+			th Win by Runs / Wickets
+			th Man of the Match
+			th Venue
+			th Umpire 1
+			th Umpire 2
+		tbody
+			tr
+				td #{match.season}
+				td #{match.team1} Vs #{match.team2}
+				td #{match.toss_winner}
+				td #{match.toss_decision}
+				td #{match.result}
+				td #{match.winner}
+				td #{match.win_by_runs} / #{match.win_by_wickets}
+				td #{match.player_of_match}
+				td #{match.venue},#{match.city}
+				td #{match.umpire1}
+				td #{match.umpire2}
